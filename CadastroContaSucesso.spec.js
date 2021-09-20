@@ -1,0 +1,30 @@
+///<reference types="cypress" />
+
+describe('Cadastro de Conta com sucesso', () => {
+    before(()=> { 
+        cy.visit('http://automationpractice.com/index.php')
+        cy.get('.login').click()
+    })
+    it('login', () => {
+        cy.get('#email_create').type('pessoa13@desafio.com.br')
+        cy.get('#SubmitCreate > span').click()       
+        cy.get('#id_gender1').click()
+        cy.get('#customer_firstname').type('José Antônio')
+        cy.get('#customer_lastname').type('Mendes da Silva')
+        cy.get('#passwd').type("asdfg")
+        cy.get('#days').select('15')
+        cy.get('#months').select('July')
+        cy.get('#years').select('2000')
+        cy.get('#newsletter').click()
+        cy.get('#optin').click()
+        cy.get('#company').type('Estudante')
+        cy.get('#address1').type('Rua dos Desafios, 10')
+        cy.get('#city').type('João Pessoa')
+        cy.get('#id_state').select('Texas')
+        cy.get('#postcode').type('00000')
+        cy.get('#other').type('Apartamento 202')
+        cy.get('#phone').type('+5532226655')
+        cy.get('#phone_mobile').type('+558898789856')
+        cy.get('#submitAccount > span').click()           
+    }) 
+})
